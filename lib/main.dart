@@ -1,3 +1,4 @@
+import 'package:button_animations/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,8 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData()
       ),
-      home: const ConnectButton(title: 'Flutter Demo Home Page'),
+      home: HomeScreen(), //const ConnectButton(title: 'Flutter Demo Home Page'),
     );
   }
 }
