@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -25,7 +27,12 @@ class HomeScreen extends StatelessWidget {
             unselectedItemColor: Colors.white70,
             type: BottomNavigationBarType.fixed,
             landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
-            items: const [
+            items: [
+              if (Platform.isMacOS || Platform.isWindows || Platform.isLinux)
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.dashboard),
+                  label: 'Dashboard',
+                ),
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
               BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle_outlined),
